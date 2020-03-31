@@ -1,9 +1,44 @@
-This is where the game will go!
-<img src='{{site.url}}/images/Milk.jpg'>
+<html>
+<body>
 
 
-{% raw%}{% for image in site.static_files %}
-  {% if image.path contains 'queens' %}
-    <img src="{{ image.path }}" alt="">
-  {% endif %}
-{% endfor %}
+<h2>This is where the game will go!</h2>
+
+<div id='q'><\div>
+
+<script>
+var before = "<img src='queens/"
+var after = " />"
+var queens = ["Alaska.jpeg",
+'Alyssa Edwards.jpeg",
+'Bianca Del Rio.jpg',
+'Bob.jpeg',
+'Chi Chi Devayne.jpg',
+'Detox.jpg',
+'Ginger Minj.jpg',
+'Jinkx.jpg',
+'Katya.jpg',
+'Laganja Estranja.jpeg',
+'Milk.jpg',
+'Naomi Smalls.jpg',
+'Nina_Bonina_Brown.jpg',
+'Pearl.png',
+'Roxxxy Andrews.jpg',
+'Sasha Velour.jpg',
+'Shea Coulee.jpg',
+'Tatianna.jpg',
+'Trixie Mattel.jpg',
+'Valentina.jpg',
+'Violet Chachki.jpg',
+'Willam.jpeg',
+'adore delano.jpg',
+'cynthia lee fontaine.jpg']
+
+
+for (i=1; i<=6; i++){
+  console.log(queens[i])
+}
+</script>
+</body>
+</html>
+
