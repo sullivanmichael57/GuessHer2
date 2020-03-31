@@ -7,8 +7,9 @@
 <div id="q"><\div>
 
 <script>
-var before = "<img src=\"queens/";
+var before = "<img src=\"images/";
 var after = "\" />";
+var imgs = "";
 var queens = ["Alaska.jpeg",
 "Alyssa Edwards.jpeg",
 "Bianca Del Rio.jpg",
@@ -36,8 +37,10 @@ var queens = ["Alaska.jpeg",
 
 
 for (i=1; i<=6; i++){
-  console.log(queens[i]);
+  imgs += before + queens[i] + after;
+  console.log(imgs);
 }
+document.getItemById("q").innerHTML = imgs;
 </script>
 </body>
 </html>
