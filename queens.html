@@ -48,7 +48,7 @@ var queens = ["Alaska.jpeg", "Alyssa Edwards.jpeg", "Bianca Del Rio.jpg","Bob.jp
 
 for (i=0;i<=3;i++){
 	console.log("row" + i.toString());
-	var tr = document.getElementById("row"+i.toString());
+	var tr = document.getElementById("row"+(i+1).toString());
 	for (j=0; j<=7; j++){
 	  var td = document.createElement("TD");
 	  td.setAttribute("style","width:800px; height:600px; background-color:darkcyan; text-align:center;vertical-align:middle");
