@@ -98,6 +98,8 @@ for (i=0;i<3;i++){
 	  tr.appendChild(td);
 	}
 }
+newGame();
+
 
 function shuffle(array) {
     let counter = array.length;
@@ -121,7 +123,14 @@ function shuffle(array) {
 
 function newGame() {
 	clearQueens();
+	document.getElementById('random_queen').src = getRandomQueen();
 }
+
+function getRandomQueen(){
+	return queens[Math.floor(Math.random()*24)];
+
+}
+
 
 function clearQueens(){
 	for (i = 0; i < queens.length; i++){
