@@ -31,10 +31,10 @@ function shuffle(array) {
 	<table style="width:100%;border: darkcyan;border-spacing: 40px">
 		<tr id='row1'>
 		</tr>
-		<tr id='row2'>
+<!-- 		<tr id='row2'>
 		</tr>
 		<tr id='row3'>
-		</tr>
+		</tr> -->
 
 	</table>
 </div>
@@ -47,11 +47,11 @@ var queens = ["Alaska.jpeg", "Alyssa Edwards.jpeg", "Bianca Del Rio.jpg","Bob.jp
 //var queens = shuffle(queens_unshuffled);
 
 for (i=0;i=1;i++){
-	console.log('how the fuck')
-	tr = document.getElementById('row1');
+	console.log("how the fuck")
+	tr = document.getElementById("row1");
 	for (j=0; j<=1; j++){
-	  td = document.createElement('TD');
-	  td.setAttribute('style',"width:800px; height:600px; background-color:darkcyan; text-align:center;vertical-align:middle");
+	  td = document.createElement("TD");
+	  td.setAttribute("style","width:800px; height:600px; background-color:darkcyan; text-align:center;vertical-align:middle");
 	  td.innerHTML = before + queens[7*i+j] + after;
 	  tr.appendChild(td);
 	  console.log(queens[i*7+j]);
