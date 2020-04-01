@@ -33,27 +33,91 @@
 	max-width: 100%;
 }
 
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+  margin-bottom: 40px;
+
+}
+
+.active {
+  background-color: green;
+  color: white;
+}
+
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+
+.dropdown-full-container {
+  height:75%;
+  overflow-y: auto;
+
+}
+
 
 
 </style>
 <head>
 	<div class="sidenav">
 		<img id="random_queen" src="images/Alaska.jpeg" style="width:90%" class="center">
-		<button title="New Game" onclick="newGame()" style="width:50%;margin-top:40px;padding:20px" class="center">New Game</button>
+		<button title="New Game" onclick="newGame()" style="width:50%;margin-top:40px;margin-bottom:40px;padding:20px" class="center">New Game</button>
+		<div class='dropdown-full-container'>
+			<button class="dropdown-btn">Season Wikipedia Links</button>
+			<div class="dropdown-container">
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_1)" target='_blank'>Season 1</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_2)" target='_blank'>Season 2</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_3)" target='_blank'>Season 3</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_4)" target='_blank'>Season 4</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_5)" target='_blank'>Season 5</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_6)" target='_blank'>Season 6</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_7)" target='_blank'>Season 7</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_8)" target='_blank'>Season 8</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_9)" target='_blank'>Season 9</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_10)" target='_blank'>Season 10</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_11)" target='_blank'>Season 11</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_(Season_12)" target='_blank'>Season 12</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_All_Stars_(Season_1)" target='_blank'>All Stars Season 1</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_All_Stars_(Season_2)" target='_blank'>All Stars Season 2</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_All_Stars_(Season_3)" target='_blank'>All Stars Season 3</a>
+				<a href="https://rupaulsdragrace.fandom.com/wiki/RuPaul%27s_Drag_Race_All_Stars_(Season_4)" target='_blank'>All Stars Season 4</a>
+
+
+
+			</div>
+		</div>
 
 	</div>
 </head>
-<body>
+<body style='background-color: white'>
 
 
 
 <div class="main">
 	<div>
-		<img src='https://github.com/sullivanmichael57/GuessHer2/blob/master/images/guess-who-yellow-logo.png?raw=true' alt='Guess Who!' style='height:25%;margin-left:auto;margin-right:auto;display:block'>
+ 		<img src='https://github.com/sullivanmichael57/GuessHer2/blob/master/images/guess-who-yellow-logo.png?raw=true' alt='Guess Who!' style='height:25%;margin-left:auto;margin-right:auto;display:block'> 
+		
 	</div>
 
 	<div style="background-color: darkcyan;margin-left:1%;margin-right:1%">
-		<table style="width:80%;border: darkcyan;border-spacing: 10px;margin:auto">
+		<table style="width:100%;border: darkcyan;border-spacing: 10px;margin:auto">
 			<tr id='row1'>
 			</tr>
 			<tr id='row2'>
@@ -93,12 +157,28 @@ for (i=0;i<3;i++){
 	  };
 	  img.setAttribute("class","queenimage");
 	  img.setAttribute("style",'filter:grayscale(0%)');
+
 	  td.appendChild(img);
 
 	  tr.appendChild(td);
 	}
 }
 newGame();
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
 
 
 function shuffle(array) {
