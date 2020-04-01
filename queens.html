@@ -27,7 +27,7 @@ function shuffle(array) {
 <h2>This is where the game will go!</h2>
 
 <div id="q">
-	<table>
+	<table style="width:100%;border: darkcyan;border-spacing: 40px">
 		<tr id='row1'>
 		</tr>
 		<tr id='row2'>
@@ -46,12 +46,15 @@ var queens = ["Alaska.jpeg", "Alyssa Edwards.jpeg", "Bianca Del Rio.jpg","Bob.jp
 
 queens = shuffle(queens)
 
-tr = document.getElementById('row1')
-for (i=0; i<=7; i++){
-  td = document.createElement('TD')
-  td.innerHTML = before + queens[i] + after
-  tr.appendChild(td)
-  console.log(queens[i])
+for (i=0;i=3;i++){
+	tr = document.getElementById('row' + i.toString())
+	for (j=0; j<=7; j++){
+	  td = document.createElement('TD')
+	  td.setAttribute('style',"width:800px; height:600px; background-color:darkcyan; text-align:center;vertical-align:middle")
+	  td.innerHTML = before + queens[7*i+j] + after
+	  tr.appendChild(td)
+	  console.log(queens[i*7+j])
+	}
 }
 
 </script>
